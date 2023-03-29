@@ -1,0 +1,18 @@
+name: Uncrustify the source code
+on: [push]
+
+jobs:
+  Uncrustify:
+    name: Run_Uncrustify
+    runs-on: ubuntu-18.04
+    container: ubuntu:18.04
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Install Uncrustify
+        run: apt-get install uncrustify
+      - name: Run Uncrustify
+        run: |
+          uncrustify --version
