@@ -16,3 +16,4 @@ jobs:
       - name: Run Uncrustify
         run: |
           uncrustify --version
+          find .  -iname "*.[hc]" -exec uncrustify -c tools/uncrustify.cfg --no-backup --replace {} +
