@@ -1,3 +1,9 @@
-- name: flawfinder_scan
-  uses: david-a-wheeler/flawfinder@2.0.19-alpha1
+name: Scan the source code
+on: [push]
+
+jobs:
+  Flawfinder-job:
+  steps:
+    -name: flawfinder_scan
+     uses: david-a-wheeler/flawfinder@2.0.19-alpha1
             
