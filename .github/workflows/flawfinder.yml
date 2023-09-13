@@ -6,17 +6,17 @@ jobs:
     name: Flawfinder
     runs-on: ubuntu-20.04
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-    - name: Checkout upstream repo
-      uses: actions/checkout@v3
-      with:
-          fetch-depth: 0
-    - name: flawfinder_scan
-      uses: david-a-wheeler/flawfinder@2.0.19
-      with:
-         arguments: '--sarif ./'
-         output: 'flawfinder_results.sarif'
+      - name: Checkout upstream repo
+        uses: actions/checkout@v3
+        with:
+            fetch-depth: 0
+      - name: flawfinder_scan
+        uses: david-a-wheeler/flawfinder@2.0.19
+        with:
+           arguments: '--sarif ./'
+           output: 'flawfinder_results.sarif'
             
