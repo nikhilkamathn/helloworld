@@ -1,4 +1,4 @@
-- name: flawfinder_scan
+name: flawfinder_scan
   uses: david-a-wheeler/flawfinder@2.0.19
   with:
     arguments: '--sarif ./'
